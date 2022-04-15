@@ -22,7 +22,7 @@ export class ElectronStateDB implements IStateDB {
   /**
    * The path to the platform-specific application data directory.
    */
-  readonly path: string = getUserDataDir();
+  readonly path: string = process.env.JLAB_STATE_DB_DIR || getUserDataDir();
 
   /**
    * The namespace prefix for all state database entries.
